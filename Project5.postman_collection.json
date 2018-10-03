@@ -1,0 +1,84 @@
+{
+	"info": {
+		"_postman_id": "b72f9339-29ab-4559-a012-bf119cdcf98f",
+		"name": "Project5",
+		"description": "Beacon API demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "display regions",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "region",
+							"value": "produce",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"list"
+					]
+				},
+				"description": "accpets a keyword - region name and returns all the discouts in that region"
+			},
+			"response": []
+		},
+		{
+			"name": "image data",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "photo",
+							"value": "lettuce.jpg",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/get_image",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"get_image"
+					]
+				},
+				"description": "accepts the filename that is the photo name in the results folder"
+			},
+			"response": []
+		}
+	]
+}

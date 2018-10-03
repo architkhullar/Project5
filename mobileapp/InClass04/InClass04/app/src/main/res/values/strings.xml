@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Smart Discounts</string>
+    <string name="textViewProductName">Product Name</string>
+    <string name="textViewDiscount">Discount</string>
+    <string name="textViewPrice">Price</string>
+    <string name="textViewRegion">Region</string>
+</resources>
