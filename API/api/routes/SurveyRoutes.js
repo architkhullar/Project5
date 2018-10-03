@@ -6,8 +6,8 @@ module.exports = function(app) {
   app.route('/list')
       .post(DiscountHandlers.list);
 
-  app.route('/get_image')
-      .post(DiscountHandlers.get_image);
+  app.route('/get_all')
+      .post(DiscountHandlers.get_all);
 
-  
+
     };

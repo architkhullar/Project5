@@ -8,11 +8,9 @@ exports.list = function(req, res) {
       })
   };
 
-  exports.get_image = function(req, res) {
-    mongoose.connection.collection("fs.files").findOne({'filename':req.body.photo},function(err, data) {
+  exports.get_all = function(req, res) {
+    mongoose.connection.collection("results").find().toArray(function(err, data) {
 
-      mongoose.connection.collection("fs.chunks").findOne({'files_id': data._id},function(err, ph) {
-        res.send(ph.data);
-});
-});
+        res.send(data);
+})
 };
