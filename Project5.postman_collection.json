@@ -29,10 +29,13 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:3000/list",
+					"raw": "http://13.58.41.200:3000/list",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"13",
+						"58",
+						"41",
+						"200"
 					],
 					"port": "3000",
 					"path": [
@@ -44,7 +47,7 @@
 			"response": []
 		},
 		{
-			"name": "image data",
+			"name": "display all",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -66,17 +69,20 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:3000/get_image",
+					"raw": "http://13.58.41.200:3000/get_all",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"13",
+						"58",
+						"41",
+						"200"
 					],
 					"port": "3000",
 					"path": [
-						"get_image"
+						"get_all"
 					]
 				},
-				"description": "accepts the filename that is the photo name in the results folder"
+				"description": "this api displays all the discounts"
 			},
 			"response": []
 		}

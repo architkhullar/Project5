@@ -24,4 +24,7 @@ public interface APIInterface {
 
     @POST("get_image")
     Call<ResponseBody> getImage(@Body ImageRequest imageRequest);
+
+    @POST("get_all")
+    Call<ArrayList<Results.ResultsValue>> getAllProducts();
 }

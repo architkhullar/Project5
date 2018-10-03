@@ -68,38 +68,9 @@ public class discountAdapter extends ArrayAdapter<Results.ResultsValue> {
         viewHolder.price.setText( resultsValue.getPrice() );
         viewHolder.region.setText( resultsValue.getRegion() );
 
-        ImageRequest imageRequest = new ImageRequest();
-        imageRequest.setphoto(resultsValue.getPhoto());
-        Call<ResponseBody> call1  =apiService.getImage(imageRequest);
-        call1.enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                if(response.isSuccessful() && response.body()!=null){
-                    try {
-                        System.out.println(response.body().string());
-                        byte[] decodedString = Base64.decode(response.body().string(), Base64.DEFAULT);
-                        Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+        String url = "http://13.58.41.200:3000";
 
-                        viewHolder.imageView.setImageBitmap(decodedByte);
-
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
-
-                }
-                else{
-                    System.out.println("null in return");
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-                System.out.println("Failed in getting image");
-            }
-        });
-
-    //          Picasso.with(getContext()).load("http://f3a64b85.ngrok.io/imagelaao?photo=coca-cola.png").into(viewHolder.imageView);
+        Picasso.with(getContext()).load(url+ "/"+resultsValue.getPhoto()).into(viewHolder.imageView);
 
         return convertView;
     }
