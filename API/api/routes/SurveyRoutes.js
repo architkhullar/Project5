@@ -8,4 +8,6 @@ module.exports = function(app) {
 
   app.route('/get_image')
       .post(DiscountHandlers.get_image);
+
+  
     };

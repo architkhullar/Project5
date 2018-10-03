@@ -12,6 +12,8 @@ mongoose.Promise = global.Promise;
 mongoose.connect('mongodb+srv://amad123:amad123@cluster0-mnw6b.mongodb.net/records?retryWrites=true');
 var db = mongoose.connection;
 
+app.use(express.static('images')); //Serves resources from public folder
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
