@@ -44,6 +44,7 @@ app.post("/checkout", function (req, res) {
         submitForSettlement: true
       }
     }, function (err, result) {
+      res.send(result);
     });
         });
 
