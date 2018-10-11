@@ -20,6 +20,33 @@ app.use(bodyParser.json());
 var routes = require('./api/routes/SurveyRoutes'); //importing route
 routes(app); //register the route
 
+var braintree = require("braintree");
+
+var gateway = braintree.connect({
+  environment: braintree.Environment.Sandbox,
+  merchantId: "m25hx22pr8nv3xd6",
+  publicKey: "hnjzyx6rf2v8r4yt",
+  privateKey: "12701cdd49b7fdf4a6f21e697e7983bf"
+});
+
+app.get("/client_token", function (req, res) {
+      gateway.clientToken.generate({}, function (err, response) {
+        res.send(response.clientToken);
+      });
+    });
+
+app.post("/checkout", function (req, res) {
+          var nonceFromTheClient = req.body.payment_method_nonce;
+          gateway.transaction.sale({
+        amount: "10.00",
+        paymentMethodNonce: nonceFromTheClient,
+        options: {
+        submitForSettlement: true
+      }
+    }, function (err, result) {
+    });
+        });
+
 app.listen(port);
 
 console.log('Advanced MAD Project 2 RESTful API server started on: ' + port);
