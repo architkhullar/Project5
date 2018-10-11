@@ -46,7 +46,7 @@ app.post("/checkout", function (req, res) {
       }
     }, function (err, result) {
       console.log(result);
-      res.send({nonce:nonceFromTheClient,  res:result});
+      res.send({nonce:nonceFromTheClient,  res:result, a: amt});
     });
         });
 
